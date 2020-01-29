@@ -7,15 +7,15 @@
 // ==========
 
 // Used for header text.
-$h1-font-stack: "Roboto", sans-serif;
-$h2-font-stack: "Roboto", sans-serif;
-$h3-font-stack: "Roboto", sans-serif;
-$h4-font-stack: "Roboto", sans-serif;
-$h5-font-stack: "Roboto", sans-serif;
-$h6-font-stack: "Roboto", sans-serif;
+$h1-font-stack: "Rubik", sans-serif;
+$h2-font-stack: "Rubik", sans-serif;
+$h3-font-stack: "Rubik", sans-serif;
+$h4-font-stack: "Rubik", sans-serif;
+$h5-font-stack: "Rubik", sans-serif;
+$h6-font-stack: "Rubik", sans-serif;
 
 // Used for body text.
-$body-font-stack: "Lora", sans-serif;
+$body-font-stack: "Karla", sans-serif;
 
 
 // Colors
@@ -23,11 +23,11 @@ $body-font-stack: "Lora", sans-serif;
 
 // Standard colors for text and backgrounds.
 $white: #FFFFFF;
-$black: #333;
-$gray: #f5f5f5;
+$black: #313135;
+$gray: #EAEAEA;
 
 // Special colors.
-$accent: #1768AC;
+$accent: #0396FF;
 $danger: #ff6462;
 $warning: #ffe066;
 
@@ -36,7 +36,7 @@ $warning: #ffe066;
 // ==========
 
 // Standardized container width.
-$container-width: 1120px;
+$container-width: 1100px;
 
 // Breakpoints.
 $desktop-breakpoint: 1200px;
@@ -51,9 +51,11 @@ $standard-box-shadow: 1px 2px 20px 0px rgba(0, 0, 0, 0.2);
 $standard-transition-duration: 0.5s;
 
 // Baseline font and line-height.
-$baseline-font-size: 14px;
+$baseline-font-size: 12px;
 $baseline-line-height: 1.5;  // Changed the line-height here as designers specs made it very hard to read body text.
+$baseline-font-size-rem: 1.25rem;
 
+$standard-input-height: 40px;
 
 
 // ==========
@@ -73,6 +75,19 @@ $baseline-line-height: 1.5;  // Changed the line-height here as designers specs 
 // Global Styles
 // ==========
 
+html{
+
+	// Fallback font.
+	font-family: $body-font-stack;
+
+	// Baseline font size and line height.
+	font-size: $baseline-font-size;
+	line-height: $baseline-line-height;
+
+	// Primary text color.
+	color: $black;
+}
+
 body{
 
 	// Optimize legibility for retina devices.
@@ -91,23 +106,13 @@ body{
 	// Background color for the site.
 	background-color: $white;
 
-	// Fallback font.
-	font-family: $body-font-stack;
-
-	// Baseline font size and line height.
-	font-size: $baseline-font-size;
-	line-height: $baseline-line-height;
-
-	// Primary text color.
-	color: $black;
-
 	p, .p{
 
 		// Fallback font.
 		font-family: $body-font-stack;
 
 		// Body text is slightly larger than baseline.
-		font-size: 1.125rem;
+		font-size: $baseline-font-size-rem;
 		line-height: 1.8;
 	}
 
@@ -138,7 +143,7 @@ body{
 	// Site header styles.
 	h1, h2, h3, h4, h5, h6{
 
-		font-weight: bold;
+		// font-weight: bold;
 	}
 
 	// Header sizing specifications as per design (sizing specified in pt, I changed to px).
@@ -221,7 +226,26 @@ body{
 	// Restricts the width of a container if it contains body text of sorts.
 	.readability-normalize{
 
-		max-width: 650px;
+		*{
+
+			max-width: 600px;
+		}
+
+		p{
+
+			max-width: 450px;
+		}
+	}
+
+	// Helper class that centers a .row vertically within a fixed height .container.
+	.vcenter{
+
+		display: flex;
+
+		.row{
+
+			align-items: center;
+		}
 	}
 
 
@@ -230,7 +254,24 @@ body{
 
 	.btn{
 
-		// Coming soon.
+		height: $standard-input-height;
+		line-height: $standard-input-height;
+
+		padding: 0px 20px;
+		border-radius: 3px;
+
+		font-size: $baseline-font-size-rem;
+
+		&:hover{
+
+			opacity: 0.8;
+		}
+
+		&.btn-accent{
+
+			background-color: $accent;
+			color: $white;
+		}
 	}
 }
 
@@ -282,4 +323,15 @@ nav.navbar{
 body.home{
 
 
+}
+
+// Main section on the homepage.
+#main{
+
+	min-height: 500px;
+
+	.link-container{
+
+		margin-top: 30px;
+	}
 }
