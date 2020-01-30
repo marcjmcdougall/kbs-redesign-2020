@@ -36,7 +36,7 @@ $warning: #ffe066;
 // ==========
 
 // Standardized container width.
-$container-width: 1100px;
+$container-width: 950px;
 
 // Breakpoints.
 $desktop-breakpoint: 1200px;
@@ -75,7 +75,7 @@ $standard-input-height: 40px;
 // Global Styles
 // ==========
 
-html{
+html, body{
 
 	// Fallback font.
 	font-family: $body-font-stack;
@@ -106,7 +106,7 @@ body{
 	// Background color for the site.
 	background-color: $white;
 
-	p, .p{
+	p, a, .p{
 
 		// Fallback font.
 		font-family: $body-font-stack;
@@ -116,14 +116,14 @@ body{
 		line-height: 1.8;
 	}
 
-	// Styles for all links.
-	a{
+	// Styles for all (non-navbar) links.
+	a:not(.no-link-hover){
 
-		color: $accent;
+		color: $black;
 
 		&:hover{
 
-			color: $black;
+			color: $accent !important;
 			text-decoration: none;
 		}
 	}
@@ -255,6 +255,7 @@ body{
 	.btn{
 
 		height: $standard-input-height;
+		min-width: 125px;
 		line-height: $standard-input-height;
 
 		padding: 0px 20px;
@@ -271,6 +272,11 @@ body{
 
 			background-color: $accent;
 			color: $white;
+
+			&:hover{
+
+				color: $white !important;
+			}
 		}
 	}
 }
@@ -293,9 +299,27 @@ body{
 // Navigation Styles
 // ==========
 
-nav.navbar{
+nav{
 
-	font-family: $h1-font-stack;
+	&.bg-light{
+
+		background-color: $white !important;
+	}
+
+	&.navbar{
+
+		margin-top: 20px;
+
+		li.nav-item:not(:last-child){
+
+			margin-right: 20px;
+
+			a.nav-link{
+
+				color: $black;
+			}
+		}
+	}
 }
 
 
@@ -328,10 +352,197 @@ body.home{
 // Main section on the homepage.
 #main{
 
-	min-height: 500px;
+	.row{
+
+		min-height: 600px;
+	}
 
 	.link-container{
 
 		margin-top: 30px;
 	}
+
+	#hero-flair-container{
+
+		position: relative;
+		height: 390px;
+		width: 485px;
+
+		float: right;
+
+		overflow: hidden;
+
+		img{
+
+			position: absolute;
+			top: 0px;
+			left: 0px;
+
+			// max-height: 400px;
+
+			&.fg{
+
+				z-index: 3;
+			}
+
+			&.bg{
+
+
+			}
+		}
+
+		#flares{
+
+			z-index: 1;
+
+			position: absolute;
+			left: 0px;
+			top: 0px;
+
+			width: 100%;
+			height: 100%;
+
+			@keyframes flair {
+
+			  0% { 
+			  	
+			  	bottom: -50px; 
+			  	// top: 100%;
+			  	// left: initial;
+			  }
+			  
+			  50% {
+
+			  	bottom: 100%; 
+			  	// top: 0px;
+			  }
+
+			  85% {
+
+			  	left: 110%;
+			  	bottom: 100%;
+			  	// top: 0px;
+			  }
+
+			  90%{
+
+			  	left: 100%;
+			  	bottom: 0px;
+			  	// top: 100%;
+			  }
+
+			  100%{
+
+			  	bottom: -50px; 
+			  	// top: calc(100% + 50px);
+			  	left: initial;
+			  }
+
+			}
+
+			.flair{
+
+				animation-name: flair;
+  				animation-duration: 2s;
+  				animation-iteration-count: infinite;
+  				display: block;
+				position: absolute;
+
+				opacity: 0.6;
+
+				transform: rotateZ(45deg);
+
+				transition: $standard-transition-duration;
+
+				// top: calc(100% + 50px);
+				bottom: -50px;
+				right: 0px;
+				width: 10px;
+				height: 50px;
+				border-radius: 10px;
+				background-color: white;
+
+				margin-right: 20px;
+
+				&:nth-of-type(1){
+
+					left: -20px;
+					animation-delay: 2.5s;
+					
+					width: 10px;
+				}
+
+				&:nth-of-type(2){
+
+					left: 60px;
+					animation-delay: 2s;
+
+					width: 15px;
+				}
+
+				&:nth-of-type(3){
+
+					left: 140px;
+					animation-delay: 5s;
+					width: 10px;
+				}
+
+				&:nth-of-type(4){
+
+					left: 220px;
+					animation-delay: 1s;
+
+					width: 10px;
+				}
+
+				&:nth-of-type(5){
+
+					left: 300px;
+					animation-delay: 1.8s;
+
+					width: 15px;
+				}
+
+				&:nth-of-type(6){
+
+					left: 320px;
+					animation-delay: 3.4s;
+
+					width: 10px;
+				}
+
+				&:nth-of-type(7){
+
+					left: 340px;
+					animation-delay: 3.4s;
+					width: 8px;
+				}
+
+				&.top{
+
+					bottom: 100%;
+				}
+			}
+		}
+
+		.filter{
+
+			background-image: linear-gradient(135deg, rgba(3, 150, 255, 0.6) 10%, rgba(3, 150, 255, 0.6) 100%);
+
+			position: absolute;
+			top: 0px;
+			left: 0px;
+
+			width: 100%;
+			height: 100%;
+
+			z-index: 2;
+		}
+	}
 }
+
+
+
+
+
+
