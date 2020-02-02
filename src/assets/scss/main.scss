@@ -25,6 +25,7 @@ $body-font-stack: "Karla", sans-serif;
 $white: #FFFFFF;
 $black: #313135;
 $gray: #EAEAEA;
+$light-gray: #FBFBFB;
 
 // Special colors.
 $accent: #0396FF;
@@ -36,7 +37,7 @@ $warning: #ffe066;
 // ==========
 
 // Standardized container width.
-$container-width: 950px;
+$container-width: 1000px;
 
 // Breakpoints.
 $desktop-breakpoint: 1200px;
@@ -56,6 +57,12 @@ $baseline-line-height: 1.5;  // Changed the line-height here as designers specs 
 $baseline-font-size-rem: 1.25rem;
 
 $standard-input-height: 40px;
+
+// Margins.
+$margin-large: 100px;
+$margin-medium: 40px;
+$margin-small: 20px;
+
 
 
 // ==========
@@ -88,7 +95,7 @@ html, body{
 	color: $black;
 }
 
-body{
+body{	
 
 	// Optimize legibility for retina devices.
 	-webkit-font-smoothing: antialiased !important;
@@ -106,7 +113,7 @@ body{
 	// Background color for the site.
 	background-color: $white;
 
-	p, a, .p{
+	p, a, .p, quote, cite{
 
 		// Fallback font.
 		font-family: $body-font-stack;
@@ -125,6 +132,22 @@ body{
 
 			color: $accent !important;
 			text-decoration: none;
+		}
+
+		&.fancy-link{
+
+			color: $accent;
+			text-decoration: underline;
+
+			&:after{
+
+				content: ' >>';
+			}
+
+			&:hover{
+
+				opacity: 0.6;
+			}
 		}
 	}
 
@@ -189,6 +212,16 @@ body{
 		margin: 2.33em 0;
 	}
 
+	section{
+
+		margin-top: 60px;
+	}
+
+	footer{
+
+		margin-top: 100px;
+	}
+
 	
 	// Helper classes.
 	// =====
@@ -237,15 +270,12 @@ body{
 		}
 	}
 
-	// Helper class that centers a .row vertically within a fixed height .container.
-	.vcenter{
+	// This strips lists of annoying margin, padding, and other nonsense.
+	.list-stripped{
 
-		display: flex;
-
-		.row{
-
-			align-items: center;
-		}
+		list-style: none;
+		margin: 0px;
+		padding: 0px;
 	}
 
 
@@ -278,6 +308,68 @@ body{
 				color: $white !important;
 			}
 		}
+
+		&.btn-gray{
+
+			background-color: $gray;
+			color: $black;
+
+			&:hover{
+
+				color: $black !important;
+			}
+		}
+	}
+
+
+	// Form Elements
+	// ==========
+
+	form.cfc-form{
+
+		.form-group{
+
+
+		}
+
+		label{
+
+			display: block;
+			font-size: $baseline-font-size-rem;
+		}
+
+		input{
+
+			font-size: $baseline-font-size-rem;
+			width: 100%;
+
+			&[type="text"], &[type="email"]{
+
+				border-radius: 3px;
+				border: 1px solid $gray;
+				padding: 8px 15px;
+			}
+
+			&[type="submit"]{
+
+				margin-top: 15px;
+			}
+
+			&.input-small{
+
+				max-width: 200px;
+			}
+
+			&.input-medium{
+
+				max-width: 300px;
+			}
+
+			&.input-full{
+
+				max-width: 100%;
+			}
+		}
 	}
 }
 
@@ -292,7 +384,6 @@ body{
 
 	max-width: $container-width;
 }
-
 
 
 // ==========
@@ -323,22 +414,161 @@ nav{
 }
 
 
-
-// ==========
-// Theming 
-// ==========
-
-// Coming soon.
-
-
-
 // ==========
 // Component Styles
 // ==========
 
-// Coming soon.
+// Section titles.
+.section-title{
+
+	h2{
+
+		margin-top: 0px;
+		margin-bottom: $margin-medium;
+		padding-bottom: $margin-small;
+
+		border-bottom: 1px solid $gray;
+
+		position: relative;
+
+		&:before{
+
+			content: "#";
+
+			position: absolute;
+			left: -23px;
+
+			color: $accent;
+			margin-right: 3px;
+		}
+	}
+}
+
+// The "Case Study" component.
+.case-study{
+
+	position: relative;
+
+	display: inline-block;
+	vertical-align: top;
+	max-width: calc(50% - 35px);
+
+	margin-bottom: 60px;
+
+	&:nth-of-type(2n){
+
+		margin-left: 70px;
+	}
+
+	h3{
+
+		margin-top: 0px;
+	}
+
+	h3 > a{
+
+		margin-left: 10px;
+		height: 15px;
+
+		svg{
+
+			color: $black;
+			opacity: 0.2;
+		}
+
+		&:hover{
+
+			svg{
+
+				opacity: 0.6;
+			}
+		}
+	}
+
+	h3 > span.results{
+
+		position: absolute;
+		right: 0px;
+		top: -3px;
+		font-size: 15px;
+		background-color: $gray;
+		padding: 5px 10px;
+
+		font-family: $body-font-stack;
+
+		border-radius: 3px;
+	}
+}
 
 
+// The "Testimonial" component.
+.testimonial{
+
+	position: relative;
+
+	display: inline-block;
+	vertical-align: top;
+	max-width: calc(50% - 35px);
+
+	margin-bottom: 60px;
+
+	&:nth-of-type(2n){
+
+		margin-left: 70px;
+	}
+
+	quote{
+
+		&::before{
+
+			// Styled double quote.
+			content: '”	';
+			line-height: 1;
+
+			transform-origin: top left;
+			transform: translate(-10px, -5px) scale(5);
+
+			position: absolute;
+			top: 0px;
+			left: 0px;
+
+			opacity: 0.1;
+		}
+	}
+
+	.citation{
+
+		display: block; 
+		margin-top: 15px;
+
+		img, cite{
+
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		img{
+
+			max-width: 32.5px;
+			// border: 2px solid $accent;
+			border-radius: 3px;
+
+			margin-right: 8px;
+		}
+
+		cite{
+
+			font-style: normal;
+			font-size: 15px;
+			line-height: 1.3;
+
+			.business{
+
+				display: block;
+			}
+		}
+	}
+}
 
 // ==========
 // Homepage Styles
@@ -349,8 +579,10 @@ body.home{
 
 }
 
-// Main section on the homepage.
-#main{
+// Hero section on the homepage.
+#hero{	
+
+	margin-top: $margin-large;
 
 	h1{
 
@@ -359,7 +591,7 @@ body.home{
 
 	.row{
 
-		min-height: 600px;
+		// min-height: 550px;
 	}
 
 	.link-container{
@@ -445,7 +677,7 @@ body.home{
 				}
 			}
 
-			.flair2{
+			.flair{
 
 				animation-duration: 1.7s;
   				animation-iteration-count: infinite;
@@ -540,6 +772,138 @@ body.home{
 		}
 	}
 }
+
+// Brands section on the homepage.
+#brands{
+
+	// margin-top: $margin-medium;
+
+	#brands-container{
+
+		img.brand-image{
+
+			display: inline-block;
+			vertical-align: middle;
+			max-width: calc((100% - (60px * 4)) / 5);
+
+
+			filter: grayscale(100%);
+
+			opacity: 0.4;
+
+			margin-right: 60px;
+
+			&:last-child{
+
+				margin-right: 0px;
+			}
+		}
+	}
+}
+
+// Process section on the homepage.
+section#process{
+
+	// margin-top: $margin-medium;
+
+	a.btn{
+
+		margin-top: 30px;
+	}
+}
+
+// Case studies section on the homepage.
+section#case-studies{
+
+
+}
+
+// Testimonials section on the homepage.
+section#testimonials{
+
+
+}
+
+// The section that shows the newsletter.
+section#footer-newsletter{
+
+	margin-top: $margin-large;
+
+	.asterisk-content{
+
+		margin-top: $margin-medium;
+	}
+}
+
+// The global site footer.
+footer{
+
+	background-color: $light-gray;
+
+	padding-top: 60px;
+
+	h2{
+
+		margin-top: 0px;
+	}
+
+	.footer-nav{
+
+		.footer-nav-item{
+
+			display: inline-block;
+			vertical-align: top;
+
+			max-width: calc((100% - (50px * 3)) / 3);
+
+			margin-left: 50px;
+
+			&:not(:first-of-type){
+
+				
+			}
+
+			.title{
+
+				margin-top: 0px;
+				margin-bottom: 25px;
+			}
+
+			ul{
+
+				li{
+
+					margin-bottom: 10px;
+
+					a{
+
+						line-height: 1.2;
+					}
+				}
+			}
+		}
+	}
+
+	#copyright{
+
+		background-color: $gray;
+		padding: 15px 0px;
+
+		margin-top: 40px;
+
+		p{
+
+			margin: 0px;
+		}
+
+		a:first-child{
+
+			margin-right: $margin-small;
+		}
+	}
+}
+
+
 
 
 
