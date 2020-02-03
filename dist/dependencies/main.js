@@ -41,6 +41,13 @@ $('.scroll-link').click(function(event){
 	doScroll($(this).attr('href'));
 });
 
+$('#contact-widget .toggler').click(function(event){
+
+	event.preventDefault();
+	// console.log('clicked');
+	$('#contact-widget .content').toggleClass('active');
+});
+
 
 // Other Events
 // ===
@@ -52,6 +59,31 @@ $(window).scroll(function(){
 
 	// Log the new scrollTop.
 	console.log('Window scrolled: ' + theWindow.scrollTop());
+
+	var contactWidget = $('#contact-widget');
+
+	if(theWindow.scrollTop() > 500){
+
+		contactWidget.addClass('active');
+	}
+	else{
+
+		contactWidget.removeClass('active');
+	}
+
+	$('.scroll-content').each(function(){
+
+		console.log('Eyy:  ' + $(this).offset().top);
+
+		if((theWindow.scrollTop() + 75) > $(this).offset().top){
+
+			var offset = theWindow.scrollTop() - $(this).offset().top;
+
+			// TODO: var currentTop = parseInt($(this).css('top'), 10);
+			$(this).css('top', offset + 'px');
+			console.log('start scrolling now!' + $(this).css('top').val());
+		}
+	});
 });
 
 

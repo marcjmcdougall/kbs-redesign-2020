@@ -1,4 +1,4 @@
-<%- include('../templates/partials/header') %>
+<%- include('../templates/partials/header', {bodyClass: 'home'}) %>
 
     <section id="hero" role="main" class="container">
 
@@ -13,7 +13,7 @@
 
 	          <div class="link-container">
 	          	
-	          	<a href="/contact" class="btn btn-accent">Get In Touch</a>
+	          	<a href="/contact" class="btn btn-accent">Let's Talk</a>
                 <a href="/process">See How It's Done&hellip;</a>
 
 	          </div>
@@ -237,4 +237,4 @@
 
     </section><!-- /.#testimonials -->
 
-<%- include('../templates/partials/footer') %>
+<%- include('../templates/partials/footer', {includeContactWidget : true}); %>

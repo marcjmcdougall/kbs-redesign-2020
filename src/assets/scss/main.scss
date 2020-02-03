@@ -46,7 +46,7 @@ $tablet-breakpoint: 768px;
 $phone-breakpoint: 576px;
 
 // Keep box shadows standard when using them.
-$standard-box-shadow: 1px 2px 20px 0px rgba(0, 0, 0, 0.2);
+$standard-box-shadow: 1px 2px 20px 0px rgba(0, 0, 0, 0.1);
 
 // Simple animation duration controller.
 $standard-transition-duration: 0.5s;
@@ -113,7 +113,7 @@ body{
 	// Background color for the site.
 	background-color: $white;
 
-	p, a, .p, quote, cite{
+	p, a, .p, quote, cite, ul, ol{
 
 		// Fallback font.
 		font-family: $body-font-stack;
@@ -124,19 +124,20 @@ body{
 	}
 
 	// Styles for all (non-navbar) links.
-	a:not(.no-link-hover){
+	a:not(.no-link-hover):not(.btn){
 
 		color: $black;
 
 		&:hover{
 
-			color: $accent !important;
+			color: $black !important;
+			opacity: 0.7;
 			text-decoration: none;
 		}
 
 		&.fancy-link{
 
-			color: $accent;
+			color: $accent !important;
 			text-decoration: underline;
 
 			&:after{
@@ -146,7 +147,8 @@ body{
 
 			&:hover{
 
-				opacity: 0.6;
+				color: $accent !important;
+				opacity: 0.7;
 			}
 		}
 	}
@@ -266,7 +268,13 @@ body{
 
 		p{
 
-			max-width: 450px;
+			max-width: 550px;
+		}
+
+		img{
+
+			margin: $margin-small 0px;
+			max-width: 100%;
 		}
 	}
 
@@ -276,6 +284,12 @@ body{
 		list-style: none;
 		margin: 0px;
 		padding: 0px;
+	}
+
+	// A class that facilitates scrolling.
+	.scroll-content{
+
+		position: relative;
 	}
 
 
@@ -295,7 +309,7 @@ body{
 
 		&:hover{
 
-			opacity: 0.8;
+			opacity: 0.9;
 		}
 
 		&.btn-accent{
@@ -317,6 +331,18 @@ body{
 			&:hover{
 
 				color: $black !important;
+			}
+		}
+
+		&.btn-hover{
+
+			transition: $standard-transition-duration;
+			transform-origin: bottom left;
+
+			&:hover{
+
+				transform: translateY(-3px);
+				box-shadow: $standard-box-shadow;
 			}
 		}
 	}
@@ -385,38 +411,16 @@ body{
 	max-width: $container-width;
 }
 
+// Page titles.
+.page-title{
 
-// ==========
-// Navigation Styles
-// ==========
+	margin-top: $margin-large;
 
-nav{
+	h1{
 
-	&.bg-light{
 
-		background-color: $white !important;
-	}
-
-	&.navbar{
-
-		margin-top: 20px;
-
-		li.nav-item:not(:last-child){
-
-			margin-right: 20px;
-
-			a.nav-link{
-
-				color: $black;
-			}
-		}
 	}
 }
-
-
-// ==========
-// Component Styles
-// ==========
 
 // Section titles.
 .section-title{
@@ -443,6 +447,137 @@ nav{
 		}
 	}
 }
+
+
+
+// ==========
+// Navigation Styles
+// ==========
+
+nav{
+
+	&.bg-light{
+
+		background-color: $white !important;
+	}
+
+	&.navbar{
+
+		margin-top: 20px;
+
+		li.nav-item:not(:last-child){
+
+			margin-right: 20px;
+
+			a.nav-link{
+
+				color: $black;
+			}
+
+			// Dropdown menu styles.
+			&.dropdown{
+
+				// When showing the dropdown...
+				&.show{
+
+					a.dropdown-toggle{
+
+
+						&::after{
+
+							transform: rotateZ(180deg);
+						}
+					}
+				}
+
+				// The toggle button.
+				a.dropdown-toggle{
+
+					&::after{
+
+						// opacity: 0.4;
+						color: $accent;
+						// Angle down glyph.
+						// https://fontawesome.com/icons/angle-down?style=light
+						content: "";
+						font-family: 'FontAwesome';
+						margin: 0px;
+						padding: 0px;
+						border: none;
+						line-height: 1;
+
+						margin-left: 5px;
+
+						vertical-align: initial;
+						width: initial;
+						height: initial;
+
+						transform-origin: 50% 50%;
+					}
+				}
+
+				// The dropdown container.
+				.dropdown-menu{
+
+					min-width: 250px;
+					top: calc(100% + 5px);
+
+					border: 0px;
+					box-shadow: $standard-box-shadow;
+					// background-color: $light-gray;
+					background-color: $white;
+
+					padding: 15px 10px;
+
+					// Headers for groups.
+					.dropdown-header{
+
+						font-family: $body-font-stack;
+						font-size: $baseline-font-size-rem;
+
+						color: $black;
+						opacity: 0.4;
+						font-style: italic;
+
+						margin-top: 0px;
+
+						pointer-events: none;
+					}
+
+					// The divider for dropdowns.
+					.dropdown-divider{
+
+						border-color: $gray;
+						// padding: 0px 10px;
+						margin: 10px 20px;
+					}
+
+					// The individual links.
+					a.dropdown-item{
+
+						margin-bottom: 5px;
+
+						&:hover{
+
+							background-color: $white;
+						}
+
+						&:not(.fancy-link):hover{
+
+							color: $black !important;
+							opacity: 0.7;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// ==========
+// Component Styles
+// ==========
 
 // The "Case Study" component.
 .case-study{
@@ -572,8 +707,152 @@ nav{
 	}
 }
 
+// The site-wide contact widget.
+#contact-widget{
+
+	z-index: 4;
+	position: fixed;
+	bottom: 50px;
+	right: 100px;
+
+	
+	transition: $standard-transition-duration opacity;
+
+	opacity: 0;
+	pointer-events: none;
+
+	&.active{
+
+		opacity: 1;
+		pointer-events: all;
+	}
+
+	// The link that toggles the visibility of the below content.
+	a.toggler{
+
+		display: inline-block;
+		width: 60px;
+		height: 60px;
+
+		line-height: 60px;
+		text-align: center;
+		font-size: 24px;
+
+		border-radius: 30px;
+
+		background-color: $accent;
+		color: $white;
+
+		box-shadow: $standard-box-shadow;
+
+		svg{
+
+			color: $white;
+			margin-left: -2px;
+		}
+	}
+
+	.close{
+
+		position: relative;
+
+		margin-top: -2px;
+		width: 20px;
+		height: 20px;
+
+		opacity: 0.2;
+
+		&:hover{
+
+			opacity: 0.4;
+		}
+
+		&::before, &::after{
+
+			content: '';
+			display: block;
+
+			position: absolute;
+			top: 10px;
+			left: 0px;
+
+			height: 2px;
+			width: 20px;
+
+			background-color: $black;
+			border-radius: 10px;
+
+			transform-origin: center center;
+			
+		}
+
+		&::before{
+			
+			transform: rotateZ(45deg);	
+		}
+
+		&::after{
+
+			transform: rotateZ(-45deg);
+		}	
+	}
+
+	// The content that is originally hidden.
+	.content{
+
+		transition: $standard-transition-duration;
+		z-index: 4;
+		background-color: $white;
+
+		position: absolute;
+		right: 0px;
+		bottom: 0px;
+		transform: translateY(120%);
+		// opacity: 0;
+		
+		min-width: 300px;
+		padding: 20px 25px;
+		border-radius: 3px;
+		box-shadow: $standard-box-shadow;
+
+		&.active{
+
+			transform: translateY(0%);
+			// opacity: 1.0;
+		}
+
+		.h3{
+
+			margin-top: 0px;
+			margin-bottom: 25px;
+		}			
+	}
+}
+
+
+// Contact options (both for the widget and the fixed part of the /contact page).
+.contact-options{
+
+	label{
+
+		font-size: $baseline-font-size-rem;
+		opacity: 0.6;
+		margin-bottom: 0px;
+	}
+
+	p{
+
+		margin-bottom: 0px;
+	}
+
+	.contact-option:not(:last-child){
+
+		margin-bottom: 10px;
+	}
+}
+
 // ==========
-// Homepage Styles
+// Page: Home
 // ==========
 
 body.home{
@@ -603,6 +882,12 @@ body.home{
 		a:first-child{
 
 			margin-right: 20px;
+		}
+
+		a{
+
+			display: inline-block;
+			vertical-align: middle;
 		}
 	}
 
@@ -873,7 +1158,27 @@ section#footer-newsletter{
 	}
 }
 
-// The global site footer.
+
+// ==========
+// Page: Contact
+// ==========
+
+.contact .contact-me{
+
+	padding: 22px 30px;
+	background-color: $light-gray;
+	border-radius: 3px;
+
+	h3{
+
+		margin-top: 0px;
+	}
+}
+
+
+// ==========
+// Component: Footer
+// ==========
 footer{
 
 	background-color: $light-gray;
