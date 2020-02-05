@@ -1,0 +1,69 @@
+<main id="main" role="main" class="container archive archive-search">
+
+  <div class="row">
+    
+    <div class="col-12 readability-normalize">
+      
+      <div class="page-title">
+
+      	<h1><%= title %></h1>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- This is the search form -->
+  <div class="row align-items-center">
+
+    <div class="col-md-6">
+
+      <form class="cfc-form search-form">
+        
+        <label for="faq-search">Type a keyword to filter:</label>
+        <input type="text" name="faq-search" class="input-large" placeholder="Pricing, revisions, contracts, oh my&hellip;" />
+
+      </form>
+
+    </div>
+
+    <div class="col-md-6">
+      
+      <p class="text-right"><a href="#" class="btn btn-gray"><i class="fas fa-filter"></i>Remove Filters</a></p>
+
+    </div>
+
+  </div>
+
+  <!-- This is the remaining content. -->
+  <div class="row">
+
+    <div class="col-md-12 archive-wrapper">
+      
+      <%- include('../components/' + componentName); %><%- include('../components/' + componentName); %><%- include('../components/' + componentName); %><%- include('../components/' + componentName); %><%- include('../components/' + componentName); %><%- include('../components/' + componentName); %><%- include('../components/' + componentName); %><%- include('../components/' + componentName); %><%- include('../components/' + componentName); %>
+
+    </div>
+
+  </div>
+
+  <!-- This is the pagination. -->
+  <div class="row">
+    
+    <div class="col-md-6">
+
+      <ul class="list-stripped pagination">
+        
+        <li class="current"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</main><!-- /.#main -->

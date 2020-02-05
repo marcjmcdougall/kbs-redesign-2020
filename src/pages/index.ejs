@@ -26,12 +26,14 @@
         	
         	<div id="hero-flair-container">
 
-                <div class="overlays">
+                <!-- <div class="overlays">
 
                     <div class="overlay1"></div>
                     <div class="overlay2"></div>
 
-                </div>
+                </div> -->
+
+                <img class="fg" src="./assets/img/arrow-overlay-10.png" />
 
         		<div class="filter"></div>
         		<div id="flares">
@@ -40,10 +42,10 @@
                     <div class="flair"></div>
                     <div class="flair"></div>
                     <div class="flair"></div>
-                    <div class="flair"></div>s
+                    <div class="flair"></div>
 
         		</div>
-        		<img class="bg" src="./assets/img/me-compressed-arrow.jpg" />
+        		<img class="bg" src="./assets/img/me-compressed-arrow-2.jpg" />
 
         	</div>
 
@@ -131,41 +133,13 @@
         
             <div class="col-md-12">
 
-                <div class="case-study-container">
+                <div class="archive-container">
 
-                    <div class="case-study">
-                        
-                        <h3>BizNews<a href="http://biznews.com" target="_blank"><i class="fas fa-external-link"></i></a> <span class="results">Up <strong>500 signups</strong> / mo.</span></h3>
-                        <p>A quick blurb about the case study to help people understand if they’d like to read more.  Also, a bit more text to flesh out the field.</p>
-
-                        <a href="" class="fancy-link">Read More</a>
-
-                    </div><div class="case-study">
-                        
-                        <h3>Safesend Software<a href="http://biznews.com" target="_blank"><i class="fas fa-external-link"></i></a></h3>
-                        <p>A quick blurb about the case study to help people understand if they’d like to read more.  Also, a bit more text to flesh out the field.</p>
-
-                        <a href="" class="fancy-link">Read More</a>
-
-                    </div><div class="case-study">
-                        
-                        <h3>Cointree<a href="http://biznews.com" target="_blank"><i class="fas fa-external-link"></i></a> <span class="results">Up <strong>1,000 signups</strong> / qtr.</span></h3>
-                        <p>A quick blurb about the case study to help people understand if they’d like to read more.  Also, a bit more text to flesh out the field.</p>
-
-                        <a href="" class="fancy-link">Read More</a>
-
-                    </div><div class="case-study">
-                        
-                        <h3>Reach Cambridge <span class="results">Up <strong>30 signups</strong> this year</span></h3>
-                        <p>A quick blurb about the case study to help people understand if they’d like to read more.  Also, a bit more text to flesh out the field.</p>
-
-                        <a href="" class="fancy-link">Read More</a>
-
-                    </div>
+                    <%- include('../components/case-study'); %><%- include('../components/case-study'); %><%- include('../components/case-study'); %><%- include('../components/case-study'); %>
 
                 </div>
 
-                <a href="/process" class="btn btn-gray">See All Case Studies</a>
+                <a href="/case-studies" class="btn btn-gray">See All Case Studies</a>
 
             </div>
 
@@ -193,39 +167,9 @@
         
             <div class="col-md-12">
 
-                <div class="testimonial-container">
+                <div class="archive-container">
 
-                    <div class="testimonial">
-                            
-                        <quote>"It was a pleasure working with Marc. What sets Marc apart from the rest is his thoroughness to learn and understand what is best for your business. He is an asset to any project you work on together. Looking forward to doing more work in the future."</quote>
-                        <div class="citation">
-
-                            <img src="./assets/img/testimonials/alec-hogg.jpg"/>
-                            <cite>Alec Hogg<span class="business opaque">BizNews</span></cite>
-
-                        </div>
-
-                    </div><div class="testimonial">
-                            
-                        <quote>"It was a pleasure working with Marc. What sets Marc apart from the rest is his thoroughness to learn and understand what is best for your business. He is an asset to any project you work on together. Looking forward to doing more work in the future."</quote>
-                        <div class="citation">
-
-                            <img src="./assets/img/testimonials/marc-mcdougall.jpg"/>
-                            <cite>Marc McDougall<span class="business opaque">Kilobyte Studios</span></cite>
-
-                        </div>
-
-                    </div><div class="testimonial">
-                            
-                        <quote>"It was a pleasure working with Marc. What sets Marc apart from the rest is his thoroughness to learn and understand what is best for your business. He is an asset to any project you work on together. Looking forward to doing more work in the future."</quote>
-                        <div class="citation">
-
-                            <img src="./assets/img/testimonials/alec-hogg.jpg"/>
-                            <cite>Jake Lester<span class="business opaque">Aspire Marketing Systems</span></cite>
-
-                        </div>
-
-                    </div>
+                    <%- include('../components/testimonial'); %><%- include('../components/testimonial'); %><%- include('../components/testimonial'); %>
 
                 </div>
 

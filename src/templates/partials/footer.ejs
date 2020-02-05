@@ -145,11 +145,21 @@
 
 	</footer>
 
-	<% if (includeContactWidget) { %>
+	<div id="bottom-bar">
 
-		<%- include('../../components/contact-widget'); %>
+		<div class="container">
 
-	<% } %>
+			<%- include('../../components/toast'); %>
+
+			<% if (includeContactWidget) { %>
+
+				<%- include('../../components/contact-widget'); %>
+
+			<% } %>
+
+		</div>
+
+	</div>
 
 
 	<!-- Bootstrap core JavaScript (with jQuery and Popper.js)

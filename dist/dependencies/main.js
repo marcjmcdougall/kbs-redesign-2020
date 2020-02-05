@@ -44,8 +44,35 @@ $('.scroll-link').click(function(event){
 $('#contact-widget .toggler').click(function(event){
 
 	event.preventDefault();
-	// console.log('clicked');
+
 	$('#contact-widget .content').toggleClass('active');
+});
+
+var toastTimeout;
+
+$('#download').click(function(event){
+
+	event.preventDefault();
+
+	// TODO: Prep the toast with the toast content via HTML props.
+	$('#toast').addClass('active');
+
+	// Close the toast.
+	toastTimeout = setTimeout(function(){
+
+		$('#toast').removeClass('active');
+
+	}, 7000);
+});
+
+$('#toast .close').click(function(event){
+
+	event.preventDefault();
+
+	$('#toast').removeClass('active');
+
+	// TODO: Pass this ID via HTML props.
+	clearTimeout(toastTimeout);
 });
 
 
@@ -71,19 +98,19 @@ $(window).scroll(function(){
 		contactWidget.removeClass('active');
 	}
 
-	$('.scroll-content').each(function(){
+	// $('.scroll-content').each(function(){
 
-		console.log('Eyy:  ' + $(this).offset().top);
+	// 	console.log('Eyy:  ' + $(this).offset().top);
 
-		if((theWindow.scrollTop() + 75) > $(this).offset().top){
+	// 	if((theWindow.scrollTop() + 75) > $(this).offset().top){
 
-			var offset = theWindow.scrollTop() - $(this).offset().top;
+	// 		var offset = theWindow.scrollTop() - $(this).offset().top;
 
-			// TODO: var currentTop = parseInt($(this).css('top'), 10);
-			$(this).css('top', offset + 'px');
-			console.log('start scrolling now!' + $(this).css('top').val());
-		}
-	});
+	// 		// TODO: var currentTop = parseInt($(this).css('top'), 10);
+	// 		$(this).css('top', offset + 'px');
+	// 		console.log('start scrolling now!' + $(this).css('top').val());
+	// 	}
+	// });
 });
 
 

@@ -1,0 +1,78 @@
+<main id="main" role="main" class="container archive">
+
+  <div class="row">
+    
+    <div class="col-12 readability-normalize">
+      
+      <div class="page-title">
+
+      	<h1><%= title %></h1>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- This is the featured content. -->
+  <div class="row">
+
+    <div class="col-md-12">
+
+      <div class="section-title">
+        
+        <h2>Featured <%= title %></h2>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-12 archive-wrapper">
+      
+      <%- include('../components/' + componentName); %><%- include('../components/' + componentName); %>
+
+    </div>
+
+  </div>
+
+  <!-- This is the remaining content. -->
+  <div class="row">
+
+    <div class="col-md-12">
+
+      <div class="section-title">
+        
+        <h2>Newest <%= title %></h2>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-12 archive-wrapper">
+      
+      <%- include('../components/' + componentName); %><%- include('../components/' + componentName); %><%- include('../components/' + componentName); %><%- include('../components/' + componentName); %><%- include('../components/' + componentName); %><%- include('../components/' + componentName); %><%- include('../components/' + componentName); %><%- include('../components/' + componentName); %><%- include('../components/' + componentName); %>
+
+    </div>
+
+  </div>
+
+  <!-- This is the pagination. -->
+  <div class="row">
+    
+    <div class="col-md-6">
+
+      <ul class="list-stripped pagination">
+        
+        <li class="current"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</main><!-- /.#main -->

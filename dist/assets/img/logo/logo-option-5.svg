@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="165" height="39.359" viewBox="0 0 165 39.359">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #0396ff;
+      }
+
+      .cls-1 {
+        opacity: 0.6;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #313135;
+        font-family: Rubik-Regular, Rubik;
+      }
+
+      .cls-3 {
+        font-size: 20px;
+      }
+
+      .cls-4 {
+        font-size: 10px;
+        opacity: 0.4;
+      }
+    </style>
+  </defs>
+  <g id="Group_101" data-name="Group 101" transform="translate(-69 -159)">
+    <g id="Group_99" data-name="Group 99" transform="translate(-15 -49)">
+      <path id="Path_20" data-name="Path 20" class="cls-1" d="M0,0H27.882V27.882Z" transform="translate(94.573 209)"/>
+      <path id="Path_19" data-name="Path 19" class="cls-2" d="M0,0H27.882V27.882Z" transform="translate(84 219.477)"/>
+    </g>
+    <g id="Group_100" data-name="Group 100" transform="translate(5 1)">
+      <text id="Clarity-First" class="cls-3" transform="translate(117 177)"><tspan x="0" y="0">Clarity-First</tspan></text>
+      <text id="CONSULTING" class="cls-4" transform="translate(118 191)"><tspan x="0" y="0">CONSULTING</tspan></text>
+    </g>
+  </g>
+</svg>

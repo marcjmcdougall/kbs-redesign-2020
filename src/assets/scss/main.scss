@@ -29,8 +29,9 @@ $light-gray: #FBFBFB;
 
 // Special colors.
 $accent: #0396FF;
-$danger: #ff6462;
-$warning: #ffe066;
+$danger: #FF5C5C;
+$warning: #FFAD5C;
+$success: #81E65C;
 
 
 // Magic Numbers (Layout and Style Defaults)
@@ -130,7 +131,7 @@ body{
 
 		&:hover{
 
-			color: $black !important;
+			// color: $black !important;
 			opacity: 0.7;
 			text-decoration: none;
 		}
@@ -151,6 +152,11 @@ body{
 				opacity: 0.7;
 			}
 		}
+
+		&.anchor{
+
+			font-size: 1em;
+		}
 	}
 
 	// Make all image and video elements responsive naturally.
@@ -160,7 +166,7 @@ body{
 	}
 
 	// Colors all FontAwesome icons.
-	svg{
+	i{
 
 		color: $accent;
 	}
@@ -271,10 +277,60 @@ body{
 			max-width: 550px;
 		}
 
-		img{
+		ul, 
+		ol, 
+		img,
+		.aside{
 
 			margin: $margin-small 0px;
+		}
+
+		img{
+
 			max-width: 100%;
+		}
+
+		form.cfc-form{
+
+			margin: 25px 0px;
+
+			.form-group{
+
+				margin-bottom: 20px;
+			}
+
+			input[type="submit"]{
+
+				margin-top: 10px;
+			}
+		}
+
+		.aside{
+
+			background-color: $light-gray;
+			border: 3px;
+			padding: 30px 30px;
+
+			h3{
+
+				margin-top: 0px;
+			}
+
+			p:last-child{
+
+				margin-bottom: 0px;
+			}
+
+			a.fancy-link{
+
+				display: inline-block;
+				margin-top: 15px;
+			}
+		}
+
+		.fancy-list{
+
+			margin-top: 0px;
 		}
 	}
 
@@ -284,6 +340,47 @@ body{
 		list-style: none;
 		margin: 0px;
 		padding: 0px;
+
+		li > .list-stripped{
+
+			padding-left: 15px;
+		}	
+	}
+
+	.list-stripped-padding{
+
+		padding: 0px;
+		margin: 0px;
+
+		padding-left: 15px;
+
+		li > .list-stripped{
+
+			padding-left: 15px;
+		}
+	}
+
+	.fancy-list{
+
+		li{
+
+			position: relative;
+			padding-left: 25px;
+
+			// margin-left: -25px;
+
+			&::before{
+
+				content: '';
+				font-family: 'FontAwesome';
+				font-weight: 'Light';
+				color: $accent;
+				// margin-right: 5px;
+
+				position: absolute;
+				left: 0px;
+			}
+		}
 	}
 
 	// A class that facilitates scrolling.
@@ -307,9 +404,15 @@ body{
 
 		font-size: $baseline-font-size-rem;
 
+		i{
+
+			color: inherit !important;
+			margin-right: 10px;
+		}
+
 		&:hover{
 
-			opacity: 0.9;
+			opacity: 0.7;
 		}
 
 		&.btn-accent{
@@ -362,6 +465,34 @@ body{
 
 			display: block;
 			font-size: $baseline-font-size-rem;
+
+			position: relative;
+
+			&.checkbox-label{
+
+				display: inline-block;
+				width: calc(100% - 35px);
+			}
+
+			.required{
+
+				position: absolute;
+				left: -10px;
+
+				color: $accent;
+				font-weight: bold;
+			}
+		}
+
+		textarea{
+
+			font-size: $baseline-font-size-rem;
+			width: 100%;
+			min-height: 200px;
+
+			border-radius: 3px;
+			border: 1px solid $gray;
+			padding: 8px 15px;
 		}
 
 		input{
@@ -369,7 +500,9 @@ body{
 			font-size: $baseline-font-size-rem;
 			width: 100%;
 
-			&[type="text"], &[type="email"]{
+			&[type="text"], 
+			&[type="email"],
+			&[type="phone"]{
 
 				border-radius: 3px;
 				border: 1px solid $gray;
@@ -379,6 +512,16 @@ body{
 			&[type="submit"]{
 
 				margin-top: 15px;
+			}
+
+			&[type="checkbox"],
+			&[type="radio"]{
+
+				display: inline-block;
+				vertical-align: top;
+
+				width: 25px;
+				margin-top: 5px;
 			}
 
 			&.input-small{
@@ -418,11 +561,95 @@ body{
 
 	h1{
 
-
+		max-width: 600px;
 	}
 }
 
-// Section titles.
+// Larger bottom margin on the archive (and single article) pages.
+.archive .page-title,
+.single .page-title{
+
+	margin-bottom: 60px;
+}
+
+// Modifications for single articles.
+.single .page-title{
+
+	position: relative;
+
+	max-width: 100%;
+	border-bottom: 1px solid $gray;
+
+	margin-top: $margin-medium;
+
+	ul.tags{
+
+		margin-bottom: 10px;
+
+		li{
+
+			a{
+
+				color: $accent;
+				opacity: 1.0;
+
+				&:hover{
+
+					color: $accent !important;
+					opacity: 0.6;
+				}
+			}
+		}
+	}
+
+	h1{
+		margin-top: 0px;
+	}
+
+	a.btn{
+
+		position: absolute;
+		right: 0px;
+		top: 40px;
+	}
+
+	.author{
+
+		font-style: italic;
+		opacity: 0.6;
+	}
+}
+
+.archive-search{
+
+	.page-title{
+
+		margin-bottom: $margin-medium;
+	}
+}
+
+
+// Standard sidebar content.
+.sidebar-content{
+
+	padding: 22px 30px;
+	background-color: $light-gray;
+	border-radius: 3px;
+
+	margin-bottom: $margin-medium;
+
+	h3{
+
+		margin-top: 0px;
+	}
+
+	p:last-child{
+
+		margin-bottom: 0px;
+	}
+}
+
+// Section titles
 .section-title{
 
 	h2{
@@ -464,6 +691,13 @@ nav{
 	&.navbar{
 
 		margin-top: 20px;
+
+		// The site logo.
+		.navbar-brand{
+
+			max-width: 160px;
+			margin-top: 5px;
+		}
 
 		li.nav-item:not(:last-child){
 
@@ -588,8 +822,6 @@ nav{
 	vertical-align: top;
 	max-width: calc(50% - 35px);
 
-	margin-bottom: 60px;
-
 	&:nth-of-type(2n){
 
 		margin-left: 70px;
@@ -605,7 +837,7 @@ nav{
 		margin-left: 10px;
 		height: 15px;
 
-		svg{
+		i{
 
 			color: $black;
 			opacity: 0.2;
@@ -613,7 +845,7 @@ nav{
 
 		&:hover{
 
-			svg{
+			i{
 
 				opacity: 0.6;
 			}
@@ -645,8 +877,6 @@ nav{
 	vertical-align: top;
 	max-width: calc(50% - 35px);
 
-	margin-bottom: 60px;
-
 	&:nth-of-type(2n){
 
 		margin-left: 70px;
@@ -676,7 +906,7 @@ nav{
 	.citation{
 
 		display: block; 
-		margin-top: 15px;
+		margin-top: 20px;
 
 		img, cite{
 
@@ -699,6 +929,12 @@ nav{
 			font-size: 15px;
 			line-height: 1.3;
 
+			h3{
+
+				margin-top: 0px;
+				margin-bottom: 0px;
+			}
+
 			.business{
 
 				display: block;
@@ -707,19 +943,35 @@ nav{
 	}
 }
 
-// The site-wide contact widget.
-#contact-widget{
+#bottom-bar{
 
 	z-index: 4;
 	position: fixed;
-	bottom: 50px;
-	right: 100px;
+	bottom: 40px;
 
-	
+	width: 100%;
+	height: 50px;
+
+	pointer-events: none;
+
+	.container{
+
+		position: relative;
+	}
+}
+
+// The site-wide contact widget.
+#contact-widget{
+
 	transition: $standard-transition-duration opacity;
 
 	opacity: 0;
 	pointer-events: none;
+
+	position: absolute;
+	// right: -100px;
+	right: 15px;
+	top: -20px;
 
 	&.active{
 
@@ -745,56 +997,16 @@ nav{
 
 		box-shadow: $standard-box-shadow;
 
-		svg{
+		&:hover{
+
+			opacity: 1.0;
+		}
+
+		i{
 
 			color: $white;
 			margin-left: -2px;
 		}
-	}
-
-	.close{
-
-		position: relative;
-
-		margin-top: -2px;
-		width: 20px;
-		height: 20px;
-
-		opacity: 0.2;
-
-		&:hover{
-
-			opacity: 0.4;
-		}
-
-		&::before, &::after{
-
-			content: '';
-			display: block;
-
-			position: absolute;
-			top: 10px;
-			left: 0px;
-
-			height: 2px;
-			width: 20px;
-
-			background-color: $black;
-			border-radius: 10px;
-
-			transform-origin: center center;
-			
-		}
-
-		&::before{
-			
-			transform: rotateZ(45deg);	
-		}
-
-		&::after{
-
-			transform: rotateZ(-45deg);
-		}	
 	}
 
 	// The content that is originally hidden.
@@ -811,7 +1023,9 @@ nav{
 		// opacity: 0;
 		
 		min-width: 300px;
-		padding: 20px 25px;
+		// padding: 20px 25px;
+		padding: 22px 30px;
+
 		border-radius: 3px;
 		box-shadow: $standard-box-shadow;
 
@@ -826,6 +1040,98 @@ nav{
 			margin-top: 0px;
 			margin-bottom: 25px;
 		}			
+	}
+}
+
+// Simple little component that displays a styled "close" button.
+.close{
+
+	position: relative;
+
+	margin-top: -2px;
+	width: 20px;
+	height: 20px;
+
+	opacity: 0.2;
+
+	&:hover{
+
+		opacity: 0.4;
+	}
+
+	&::before, &::after{
+
+		content: '';
+		display: block;
+
+		position: absolute;
+		top: 10px;
+		left: 0px;
+
+		height: 2px;
+		width: 20px;
+
+		background-color: $black;
+		border-radius: 10px;
+
+		transform-origin: center center;
+		
+	}
+
+	&::before{
+		
+		transform: rotateZ(45deg);	
+	}
+
+	&::after{
+
+		transform: rotateZ(-45deg);
+	}
+
+	&.light{
+
+		&::before, &::after{
+
+			background-color: $white;
+		}
+	}	
+}
+
+#toast{
+
+	max-width: 500px;
+	background-color: $black;
+	border-radius: 3px;
+	color: $white;
+
+	padding: 20px;
+
+	position: absolute;
+	left: 15px;
+	top: 0px;
+
+	transform: translateY(100%);
+	transition: $standard-transition-duration transform;
+
+	&.active{
+
+		pointer-events: all;
+		transform: translateY(-70%);
+	}
+
+	.toast-title{
+
+
+	}
+
+	.toast-content{
+
+		opacity: 0.8;
+		
+		p:last-child{
+
+			margin-bottom: 0px;
+		}
 	}
 }
 
@@ -850,6 +1156,406 @@ nav{
 		margin-bottom: 10px;
 	}
 }
+
+// The availability widget that appears on the "contact" page.
+.availability-widget{
+
+	// If I am available...
+	&.available{
+
+		.capacity-indicator{
+
+			background-color: $success;
+			animation-name: available;
+
+			@keyframes available{
+
+				0%{
+
+					width: 0%;
+				}
+
+				100%{
+
+					width: 100%;
+				}
+			}
+		}
+
+		.accent{
+
+			color: $success;
+		}
+	}
+
+	// If I am partially available...
+	&.partial{
+
+		.capacity-indicator{
+
+			background-color: $warning;
+
+			animation-name: partial;
+
+			@keyframes partial{
+
+				0%{
+
+					width: 0%;
+				}
+
+				100%{
+
+					width: 40%;
+				}
+			}
+		}
+
+		.accent{
+
+			color: $warning;
+		}
+
+		.show-partial{
+
+			display: inline;
+		}
+	}
+
+	// If I am unavailable...
+	&.unavailable{
+
+		.capacity-indicator{
+
+			background-color: $danger;
+
+			animation-name: unavailable;
+
+			@keyframes unavailable{
+
+				0%{
+
+					width: 0%;
+				}
+
+				100%{
+
+					width: 15%;
+				}
+			}
+		}
+
+		.accent{
+
+			color: $danger;
+		}
+
+		.show-unavailable{
+
+			display: inline;
+		}
+	}
+
+	h3{
+
+		position: relative;
+
+		.monitor{
+
+			// display: inline-block;
+			display: none; // Removed for now.
+			width: 6px;
+			height: 6px;
+
+			border-radius: 3px;
+
+			background-color: $accent;
+
+			position: relative;
+			// right: 0px;
+			top: -2px;
+			margin-left: 6px;
+
+			animation-name: pulse;
+			animation-duration: 4s;
+			animation-iteration-count: infinite;
+
+			@keyframes pulse{
+
+				0%{
+
+					opacity: 1.0;
+				}
+
+				50%{
+
+					opacity: 0.2;
+				}
+
+				100%{
+
+					opacity: 1.0;
+				}
+			}
+		}
+	}
+
+	.show-partial,
+	.show-unavailable{
+
+		display: none;
+	}
+
+	.capacity-bar,
+	.capacity-indicator{
+
+		height: 8px;
+
+		border-radius: 3px;
+
+		display: block;
+	}
+
+	// The graphical bar.
+	.capacity-bar{
+
+		background-color: $white;
+		margin-bottom: 15px;
+		width: 100%;
+
+		position: relative;
+
+		margin: 22px 0px;
+
+		// The color indicator.
+		.capacity-indicator{
+
+			position: absolute;
+
+			animation-delay: 0.5s;
+			animation-duration: 1s;
+			animation-fill-mode: forwards;
+			animation-timing-function: cubic-bezier(0.5, 0.75, 0.3, 1);
+		}
+	}
+
+	.accent{
+
+		font-weight: bold;
+	}
+}
+
+
+// A single item in any archive.
+.archive-item{
+
+	display: inline-block;
+	vertical-align: top;
+
+	max-width: calc(50% - 30px);
+
+	margin-bottom: 60px;
+
+	&:nth-of-type(2n){
+
+		margin-left: 60px;
+	}
+}
+
+// A single article in an archive.
+.article{
+
+	margin-bottom: $margin-medium;
+
+	h3{
+
+		margin-top: 0px;
+		margin-bottom: 8px;
+
+		a{
+
+			font-family: $h1-font-stack;
+			font-size: 1em;
+		}
+	}
+
+	p.description{
+
+		opacity: 0.8;
+	}
+
+	p.bottom-content{
+
+		position: relative;
+		margin-top: 20px;
+
+		a.fancy-link{
+
+
+		}
+
+		.read-time{
+
+			position: absolute;
+			right: 0px;
+
+			font-style: italic;
+			opacity: 0.6;
+		}
+	}
+}
+
+// Article tags component.
+ul.tags{
+
+	margin-bottom: 5px;
+
+	li{
+
+		display: inline-block;
+		margin-right: 10px;
+
+		a{
+
+			text-decoration: underline;
+			opacity: 0.4;
+
+			&:hover{
+
+				text-decoration: underline !important;
+				opacity: 0.8;
+			}
+		}
+	}
+}
+
+// Pagination for multiply-paged items.
+ul.pagination{
+
+	li{
+
+		display: inline-block;
+		margin-right: 20px;
+
+		&.current{
+
+			a{
+
+				opacity: 1.0;
+			}
+		}
+
+		a{
+
+			opacity: 0.6;
+
+			&:hover{
+
+				opacity: 1.0 !important;
+			}
+		}
+	}
+}
+
+// The sub-navigation for structured content on the site.
+ul.breadcrumbs{
+
+	margin-top: $margin-large;
+
+	li{
+
+		display: inline-block;
+		margin-right: 5px;
+
+		&:not(:last-child)::after{
+
+			content: '/';
+			margin-left: 8px;
+			opacity: 0.6;
+		}
+
+		&.parent{
+
+			a{
+
+				opacity: 0.6;
+
+				&:hover{
+
+					opacity: 1.0;
+				}
+			}
+		}
+	}
+}
+
+// In article table of contents links.
+.article-navigation{
+
+	background-color: $light-gray;
+	padding: 22px 30px;
+	border-radius: 3px;
+
+
+	.navigation-label{
+
+		// font-style: italic;
+		margin-top: 0px;
+	}
+
+	ol{
+
+
+		li{
+
+			margin-bottom: 10px;
+			line-height: 1.0;
+
+			>ol{
+
+				margin-top: 10px;
+
+				li{
+
+					position: relative;
+					padding-left: 12.5px;
+
+					&::before{
+
+						content: '>';
+
+						position: absolute;
+						left: 0px;
+						top: 4px;
+
+						opacity: 0.8;
+					}
+				}
+			}
+
+			a{
+
+				color: $accent !important;
+				line-height: 1.5;
+
+				text-decoration: underline;
+
+				&:hover{
+
+					color: $accent;
+					text-decoration: underline !important;
+				}
+			}
+		}
+	}		
+}
+
+// A single FAQ item.
+.faq{
+
+	// margin-bottom: $margin-medium;
+}
+
 
 // ==========
 // Page: Home
@@ -894,8 +1600,8 @@ body.home{
 	#hero-flair-container{
 
 		position: relative;
-		height: 365px;
-		width: 485px;
+		height: 385px;
+		width: 484px;
 
 		float: right;
 
@@ -1163,17 +1869,28 @@ section#footer-newsletter{
 // Page: Contact
 // ==========
 
-.contact .contact-me{
 
-	padding: 22px 30px;
-	background-color: $light-gray;
-	border-radius: 3px;
 
-	h3{
+// ==========
+// Template: Archive
+// ==========
 
-		margin-top: 0px;
-	}
+.archive-wrapper{
+
+	// margin-bottom: 20px;
 }
+
+
+// ==========
+// Template: Archive (Search)
+// ==========
+
+// The search form on the search archive page.
+.archive-search .search-form{
+
+	margin-bottom: $margin-medium;
+}
+
 
 
 // ==========

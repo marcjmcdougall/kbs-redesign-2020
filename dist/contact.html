@@ -18,7 +18,7 @@
 
     <!-- FontAwesome -->
     <!-- NOTE: This is the paid license...if a client wants to use this in their projects, they'll need to get their own license. -->
-    <script defer src="https://pro.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-816IUmmhAwCMonQiPZBO/PTgzgsjHtpb78rpsLzldhb4HZjFzBl06Z3eu4ZuwHTz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-ekOryaXPbeCpWQNxMwSWVvQ0+1VrStoPJq54shlYhR8HzQgig1v5fas6YgOqLoKz" crossorigin="anonymous" defer>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -40,7 +40,7 @@
       <div class="container">
 
         <!-- Replace this with a brand image if needed. -->
-        <a class="navbar-brand no-link-hover" href="/"><strong>Clarity-First <span class="accent">Consulting</span></strong></a>
+        <a class="navbar-brand no-link-hover" href="/" style="font-family: 'Rubik';"><img src="./assets/img/logo/logo-option-9.svg" alt=""></a>
 
         <!-- This is the toggler button. -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-primary" aria-controls="nav-primary" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,9 +56,9 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="about-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
-              <div class="dropdown-menu" aria-labelledby="about-dropdown">
+              <div class="dropdown-menu dropdown-menu" aria-labelledby="about-dropdown">
                 <h6 class="dropdown-header">My Process</h6>
-                <a class="dropdown-item" href="/process">Process Overview</a>
+                <a class="dropdown-item" href="/process">Approach & Philosophy</a>
                 <a class="dropdown-item" href="/pricing">Pricing</a>
                 <a class="dropdown-item" href="/common-questions">Common Questions</a>
 
@@ -69,25 +69,25 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/about">Case Studies</a>
+              <a class="nav-link" href="/case-studies">Case Studies</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/about">Testimonials</a>
+              <a class="nav-link" href="/testimonials">Testimonials</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="articles-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Articles</a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="articles-dropdown">
                 <h6 class="dropdown-header">Popular</h6>
-                <a class="dropdown-item" href="#">My Freelancing Guide</a>
-                <a class="dropdown-item" href="#">How To Build A Site That Converts</a>
-                <a class="dropdown-item" href="#">150 Quick Wins For More SAAS Signups</a>
+                <a class="dropdown-item" href="/single-article">My Freelancing Guide</a>
+                <a class="dropdown-item" href="/single-article">How To Build A Site That Converts</a>
+                <a class="dropdown-item" href="/single-article">150 Quick Wins For More SAAS Signups</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item fancy-link" href="/articles">All My Articles</a>
               </div>
             </li>
 
             <li class="nav-item">
-              <a class="btn btn-accent" href="/about">Let's Talk</a>
+              <a class="btn btn-accent" href="/contact">Let's Talk</a>
             </li>
 
           </ul>
@@ -120,21 +120,68 @@
     <div class="col-md-6">
 
       <div class="readability-normalize">
+
+        <p>The best way to get in touch is to fill out this form, though I know many of you geezers still prefer email & phone, so you can find that off to the right. &nbsp;😉</p>
       	
-      	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Magna sit amet purus gravida quis. Amet mauris commodo quis imperdiet massa tincidunt nunc. Habitant morbi tristique senectus et netus et. Nullam vehicula ipsum a arcu. Donec ac odio tempor orci dapibus. In arcu cursus euismod quis viverra nibh cras pulvinar. Dignissim suspendisse in est ante in nibh mauris cursus mattis. Enim tortor at auctor urna nunc id. Tellus in hac habitasse platea dictumst vestibulum.</p>
+      	<form class="cfc-form">
+                
+          <div class="form-group">
+            
+            <label for="fullName"><span class="required">*</span>Full Name:</label>
+            <input type="text" name="fullName" class="input-full" placeholder="Elon Musk" required />
 
-      	<ul>
-      		<li>This is a list item.</li>
-      		<li>This is a list item.</li>
-      		<li>This is a list item.</li>
-      		<li>This is another list item that's much longer and hopefully uses the next line as well (need just a bit more).</li>
-      		<li>This is a list item.</li>
-      		<li>This is a list item.</li>
-      	</ul>
+          </div>
 
-    		<p>Non odio euismod lacinia at quis risus. Sit amet commodo nulla facilisi nullam vehicula ipsum. Augue eget arcu dictum varius duis at consectetur lorem donec. Velit dignissim sodales ut eu sem integer vitae justo eget. Et odio pellentesque diam volutpat. Praesent elementum facilisis leo vel fringilla est. Sed adipiscing diam donec adipiscing tristique risus nec feugiat in. Massa enim nec dui nunc mattis enim ut tellus elementum. Aliquet lectus proin nibh nisl. Elit sed vulputate mi sit amet mauris. Mauris ultrices eros in cursus turpis massa tincidunt. In nibh mauris cursus mattis molestie. Posuere lorem ipsum dolor sit amet consectetur adipiscing elit. Dignissim enim sit amet venenatis. Felis bibendum ut tristique et egestas quis. Amet luctus venenatis lectus magna. Sagittis eu volutpat odio facilisis mauris sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus.</p>
+          <div class="form-group">
+            
+            <label for="email"><span class="required">*</span>Email:</label>
+            <input type="email" name="email" class="input-medium" placeholder="elon@tesla.com" required/>
 
-    		<img src="./assets/img/me-coffee.jpg" />
+          </div>
+
+          <div class="form-group">
+            
+            <label for="phone">Phone #:</label>
+            <input type="phone" name="phone" class="input-medium" placeholder="+1(678)-680-2106" />
+
+          </div>
+
+          <div class="form-group">
+            
+            <label for="description"><span class="required">*</span>Briefly describe your project:</label>
+            <textarea name="description" placeholder="So my website isn’t doing what I want it to do&hellip;" required></textarea>
+
+          </div>
+
+          <div class="form-group">
+            
+            <label for="timeline">When are you looking to start this project?</label>
+            <input type="text" name="timeline" class="input-full" placeholder="As soon as possible &mdash; this is business-critical for us."/>
+
+          </div>
+
+          <div class="form-group">
+            
+            <label for="investment"><span class="required">*</span>Share what you belive is a fair investment for this project:</label>
+            <input type="text" name="investment" class="input-full" placeholder="We can't afford to spend more than $150,000 on this." required/>
+
+          </div>
+
+          <div class="form-group">
+            
+            <label for="authority"><span class="required">*</span>Are you authorized to commission work for your organization?</label>
+
+            <input type="radio" name="authority" value="yes" id="authority-yes" />
+            <label class="checkbox-label" for="authority-yes">I am the person who is going to be held <strong>internally accountable</strong> for the results of this project, and nobody above me can “veto” my hiring decisions.</label>
+
+            <input type="radio" name="authority" value="no" id="authority-no" checked /> 
+            <label class="checkbox-label" for="authority-no"><strong>I am not this person</strong>, however I can and will put you in touch with them if there's a good fit.</label>
+
+          </div>
+
+          <input type="submit" name="submit" class="btn btn-accent input-small" value="Let's Do This">
+
+        </form>
 
       </div>
 
@@ -145,9 +192,9 @@
     <!-- This is the fixed content. -->
     <div class="col-md-4">
       
-      <div class="contact-me scroll-content">
+      <div class="sidebar-content">
 
-        <h3>Get In Touch<span class="toggler close"></span></h3>
+        <h3>Basic Contact Details</h3>
         
         <div class="contact-options">
 
@@ -173,6 +220,20 @@
           </div>
         
         </div>
+
+      </div>
+
+      <div class="sidebar-content availability-widget partial">
+
+        <h3>Current Availability <span class="monitor"></span></h3>
+        
+        <div class="capacity-bar">
+          
+          <span class="capacity-indicator">
+
+        </div>
+
+        <p>As of <strong>February 4th 2020</strong>, I am <span class="accent"><span class="show-partial">partially </span><span class="show-unavailable">un</span>available</span> for new projects.  <span class="show-unavailable">Feel free to reach out, but please expect some delays.</span></p>
 
       </div>
       
@@ -329,7 +390,32 @@
 
 	</footer>
 
+	<div id="bottom-bar">
+
+		<div class="container">
+
+			<div id="toast">
 	
+	<div class="toast-container">
+		
+		<a href="#" class="close light"></a>
+		<p class="toast-title"><strong>What?</strong>  You don’t want my email address first??</p>	
+
+		<div class="toast-content">
+
+			<p>Nope!  I only want email subscribers that genuinely want to hear from me…so just enjoy those sexy insights for free. 😎</p>	
+
+		</div>
+
+	</div>
+
+</div>
+
+			
+
+		</div>
+
+	</div>
 
 
 	<!-- Bootstrap core JavaScript (with jQuery and Popper.js)

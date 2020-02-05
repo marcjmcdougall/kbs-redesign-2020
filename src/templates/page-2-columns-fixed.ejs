@@ -20,21 +20,68 @@
     <div class="col-md-6">
 
       <div class="readability-normalize">
+
+        <p>The best way to get in touch is to fill out this form, though I know many of you geezers still prefer email & phone, so you can find that off to the right. &nbsp;😉</p>
       	
-      	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Magna sit amet purus gravida quis. Amet mauris commodo quis imperdiet massa tincidunt nunc. Habitant morbi tristique senectus et netus et. Nullam vehicula ipsum a arcu. Donec ac odio tempor orci dapibus. In arcu cursus euismod quis viverra nibh cras pulvinar. Dignissim suspendisse in est ante in nibh mauris cursus mattis. Enim tortor at auctor urna nunc id. Tellus in hac habitasse platea dictumst vestibulum.</p>
+      	<form class="cfc-form">
+                
+          <div class="form-group">
+            
+            <label for="fullName"><span class="required">*</span>Full Name:</label>
+            <input type="text" name="fullName" class="input-full" placeholder="Elon Musk" required />
 
-      	<ul>
-      		<li>This is a list item.</li>
-      		<li>This is a list item.</li>
-      		<li>This is a list item.</li>
-      		<li>This is another list item that's much longer and hopefully uses the next line as well (need just a bit more).</li>
-      		<li>This is a list item.</li>
-      		<li>This is a list item.</li>
-      	</ul>
+          </div>
 
-    		<p>Non odio euismod lacinia at quis risus. Sit amet commodo nulla facilisi nullam vehicula ipsum. Augue eget arcu dictum varius duis at consectetur lorem donec. Velit dignissim sodales ut eu sem integer vitae justo eget. Et odio pellentesque diam volutpat. Praesent elementum facilisis leo vel fringilla est. Sed adipiscing diam donec adipiscing tristique risus nec feugiat in. Massa enim nec dui nunc mattis enim ut tellus elementum. Aliquet lectus proin nibh nisl. Elit sed vulputate mi sit amet mauris. Mauris ultrices eros in cursus turpis massa tincidunt. In nibh mauris cursus mattis molestie. Posuere lorem ipsum dolor sit amet consectetur adipiscing elit. Dignissim enim sit amet venenatis. Felis bibendum ut tristique et egestas quis. Amet luctus venenatis lectus magna. Sagittis eu volutpat odio facilisis mauris sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus.</p>
+          <div class="form-group">
+            
+            <label for="email"><span class="required">*</span>Email:</label>
+            <input type="email" name="email" class="input-medium" placeholder="elon@tesla.com" required/>
 
-    		<img src="./assets/img/me-coffee.jpg" />
+          </div>
+
+          <div class="form-group">
+            
+            <label for="phone">Phone #:</label>
+            <input type="phone" name="phone" class="input-medium" placeholder="+1(678)-680-2106" />
+
+          </div>
+
+          <div class="form-group">
+            
+            <label for="description"><span class="required">*</span>Briefly describe your project:</label>
+            <textarea name="description" placeholder="So my website isn’t doing what I want it to do&hellip;" required></textarea>
+
+          </div>
+
+          <div class="form-group">
+            
+            <label for="timeline">When are you looking to start this project?</label>
+            <input type="text" name="timeline" class="input-full" placeholder="As soon as possible &mdash; this is business-critical for us."/>
+
+          </div>
+
+          <div class="form-group">
+            
+            <label for="investment"><span class="required">*</span>Share what you belive is a fair investment for this project:</label>
+            <input type="text" name="investment" class="input-full" placeholder="We can't afford to spend more than $150,000 on this." required/>
+
+          </div>
+
+          <div class="form-group">
+            
+            <label for="authority"><span class="required">*</span>Are you authorized to commission work for your organization?</label>
+
+            <input type="radio" name="authority" value="yes" id="authority-yes" />
+            <label class="checkbox-label" for="authority-yes">I am the person who is going to be held <strong>internally accountable</strong> for the results of this project, and nobody above me can “veto” my hiring decisions.</label>
+
+            <input type="radio" name="authority" value="no" id="authority-no" checked /> 
+            <label class="checkbox-label" for="authority-no"><strong>I am not this person</strong>, however I can and will put you in touch with them if there's a good fit.</label>
+
+          </div>
+
+          <input type="submit" name="submit" class="btn btn-accent input-small" value="Let's Do This">
+
+        </form>
 
       </div>
 
@@ -45,9 +92,9 @@
     <!-- This is the fixed content. -->
     <div class="col-md-4">
       
-      <div class="contact-me scroll-content">
+      <div class="sidebar-content">
 
-        <h3>Get In Touch<span class="toggler close"></span></h3>
+        <h3>Basic Contact Details</h3>
         
         <div class="contact-options">
 
@@ -73,6 +120,20 @@
           </div>
         
         </div>
+
+      </div>
+
+      <div class="sidebar-content availability-widget partial">
+
+        <h3>Current Availability <span class="monitor"></span></h3>
+        
+        <div class="capacity-bar">
+          
+          <span class="capacity-indicator">
+
+        </div>
+
+        <p>As of <strong>February 4th 2020</strong>, I am <span class="accent"><span class="show-partial">partially </span><span class="show-unavailable">un</span>available</span> for new projects.  <span class="show-unavailable">Feel free to reach out, but please expect some delays.</span></p>
 
       </div>
       
