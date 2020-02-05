@@ -75,6 +75,13 @@ $('#toast .close').click(function(event){
 	clearTimeout(toastTimeout);
 });
 
+$('.scroll-content').click(function(event){
+
+	event.preventDefault();
+
+	$('.scroll-content img').toggleClass('active');
+});
+
 
 // Other Events
 // ===
@@ -85,9 +92,35 @@ $(window).scroll(function(){
 	var theWindow = $(this);
 
 	// Log the new scrollTop.
-	console.log('Window scrolled: ' + theWindow.scrollTop());
+	// console.log('Window scrolled: ' + theWindow.scrollTop());
 
 	var contactWidget = $('#contact-widget');
+
+	$('.scroll-content').each(function(){
+
+		// Scroll this content down the page according to the scroll value of the window.
+		// 
+		// Some conditions:
+		// - Don't scroll until the window has passed a certain "threshold" (100px below the element's parent container).
+		// - Don't scroll if the new bottom of the element will move beyond the bottom of the parent container.
+		if(theWindow.scrollTop() >= ($(this).parent().offset().top - 60) && ((theWindow.scrollTop() + $(this).outerHeight() + 60) <= ($(this).parent().offset().top + $(this).parent().outerHeight() - 25))){
+
+			var newTranslateY = (theWindow.scrollTop() - ($(this).parent().offset().top) + 60 );
+
+			if(newTranslateY < 0){
+
+				newTranslateY = 0;
+			}
+
+			// Set the CSS value (use Math.floor to avoid strange rounding errors in the CSS layout).
+			$(this).css('transform', 'translateY(' + Math.floor(newTranslateY) + 'px)');
+		}
+		else if (theWindow.scrollTop() < ($(this).parent().offset().top - 60)){
+
+			// If we are at the top of the page, simply press reset the translate to 0px;
+			$(this).css('transform', 'translateY(0px)');
+		}
+	});	
 
 	if(theWindow.scrollTop() > 500){
 
@@ -97,6 +130,20 @@ $(window).scroll(function(){
 
 		contactWidget.removeClass('active');
 	}
+
+	$('.magic-header').each(function(){
+
+		if((theWindow.scrollTop() + 100) >= $(this).offset().top){
+
+			var target = $(this).data('target');
+
+			$('.case-study-image-container > img').removeClass('active');
+			$('img#' + target).addClass('active');
+
+			console.log('Activating #' + target + ' now.');
+		}
+	});
+
 
 	// $('.scroll-content').each(function(){
 

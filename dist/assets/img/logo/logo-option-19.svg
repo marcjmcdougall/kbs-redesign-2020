@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="39" viewBox="0 0 140 39">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #313135;
+      }
+
+      .cls-1 {
+        font-size: 20px;
+        font-family: Rubik-Regular, Rubik;
+      }
+
+      .cls-2 {
+        font-size: 12px;
+        font-family: Karla-Regular, Karla;
+        letter-spacing: 0.39em;
+      }
+
+      .cls-2, .cls-3 {
+        opacity: 0.2;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #0396ff;
+      }
+    </style>
+  </defs>
+  <g id="Group_126" data-name="Group 126" transform="translate(-170 -80)">
+    <g id="Group_118" data-name="Group 118" transform="translate(53 -79)">
+      <text id="Clarity-First" class="cls-1" transform="translate(117 178)"><tspan x="0" y="0">Clarity-First</tspan></text>
+      <text id="CONSULTING" class="cls-2" transform="translate(118 184)"><tspan x="0" y="11">CONSULTING</tspan></text>
+    </g>
+    <g id="Group_125" data-name="Group 125" transform="translate(202 -13)">
+      <path id="Union_3" data-name="Union 3" class="cls-3" d="M16.228,16.821c-8.183-8.189-8.095-8.1-8.005-8.007S8.4,9,.176.769A.425.425,0,0,1,.425,0H16.575A.425.425,0,0,1,17,.425v16.15a.425.425,0,0,1-.772.246Z" transform="translate(91 93)"/>
+      <path id="Union_2" data-name="Union 2" class="cls-4" d="M16.228,16.821c-8.183-8.189-8.095-8.1-8.005-8.007S8.4,9,.176.769A.425.425,0,0,1,.425,0H16.575A.425.425,0,0,1,17,.425v16.15a.425.425,0,0,1-.772.246Z" transform="translate(86 98)"/>
+    </g>
+  </g>
+</svg>
