@@ -79,6 +79,11 @@ $margin-small: 20px;
 }
 
 
+html{
+
+	min-height: 100%;
+	position: relative;
+}
 
 // ==========
 // Global Styles
@@ -95,6 +100,9 @@ html, body{
 
 	// Primary text color.
 	color: $black;
+
+	// Prevents the issue of being unable to make a container 100% vertical height.
+	// height: 100%;
 }
 
 body{	
@@ -106,11 +114,6 @@ body{
 	// Force normal sizing rules.
 	box-sizing: border-box;
 	@include moz-border-box-fix;
-
-	// Anchor the content container to the top left.
-	position: relative;
-	top: 0px;
-	left: 0px;
 
 	// Background color for the site.
 	background-color: $white;
@@ -486,6 +489,22 @@ body{
 			}
 		}
 
+		&.btn-light{
+
+			background-color: transparent;
+			border: 1px solid $accent;
+
+			color: $accent;
+
+			&:hover{
+
+				color: $white;
+				background-color: $accent;
+
+				opacity: 1.0;
+			}
+		}
+
 		&.btn-hover{
 
 			transition: $standard-transition-duration;
@@ -734,6 +753,29 @@ body{
 
 		position: fixed;
 		top: 100px;
+	}
+}
+
+.not-found{
+
+	#main{
+
+		// margin-top: 80px;
+		margin-bottom: 200px;
+
+		a.btn{
+
+			margin-top: 30px;
+		}
+	}
+
+	#copyright{
+
+		position: absolute;
+		bottom: 0px;
+		left: 0px;
+
+		width: 100%;
 	}
 }
 
@@ -1672,7 +1714,10 @@ ul.breadcrumbs{
 
 body.home{
 
+	nav.navbar{
 
+
+	}
 }
 
 // Hero section on the homepage.
@@ -2095,23 +2140,24 @@ footer{
 			}
 		}
 	}
+}
 
-	#copyright{
+// The copyright text at the bottom of the site.
+#copyright{
 
-		background-color: $gray;
-		padding: 15px 0px;
+	background-color: $gray;
+	padding: 15px 0px;
 
-		margin-top: 40px;
+	margin-top: 40px;
 
-		p{
+	p{
 
-			margin: 0px;
-		}
+		margin: 0px;
+	}
 
-		a:first-child{
+	a:first-child{
 
-			margin-right: $margin-small;
-		}
+		margin-right: $margin-small;
 	}
 }
 

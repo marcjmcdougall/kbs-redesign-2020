@@ -27,15 +27,11 @@
     <link rel="stylesheet" href="./assets/css/main.css" type="text/css">
   </head>
 
-  <% if (bodyClass) { %>
+  
 
-    <body class="<%= bodyClass %>" >
+    <body class="not-found" >
 
-  <% } else{ %>
-
-    <body>
-
-  <% } %>
+  
 
     <!-- Standard Bootstrap Navbar -->
     <nav class="navbar navbar-expand-md navbar-light bg-light">
@@ -101,3 +97,92 @@
       </div>
 
     </nav>
+
+	<main id="main" role="main" class="container page page-full">
+
+  <div class="row align-items-center">
+    
+    <div class="col-md-12 readability-normalize">
+
+      <div class="page-title">
+
+      	<h1><span class="accent">404</span>: Page Not Found</h1>
+        <p>The URL you have tried to visit no longer exists or has been moved.  This is probably my fault, so <strong>I’m sorry</strong>!  I hope I can make it up to you with the next page you find&hellip;</p>
+
+
+        <a href="/" class="btn btn-gray">Return to Homepage</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main><!-- /.#main -->
+
+	<div id="copyright" class="opaque">
+				
+		<div class="container">
+
+			<div class="row">
+				
+				<div class="col-md-4">
+					
+					<p>&copy; 2020 Clarity-First Consulting</p>
+
+				</div>
+
+				<div class="col-md-8">
+					
+					<p class="text-right"><a href="/credits">Credits</a><a href="/terms">Terms &amp; Conditions</a></p>
+
+				</div>
+
+			</div>
+
+		</div>	
+
+	</div>
+
+</footer>
+
+	<div id="bottom-bar">
+
+		<div class="container">
+
+			<div id="toast">
+	
+	<div class="toast-container">
+		
+		<a href="#" class="close light"></a>
+		<p class="toast-title"><strong>What?</strong>  You don’t want my email address first??</p>	
+
+		<div class="toast-content">
+
+			<p>Nope!  I only want email subscribers that genuinely want to hear from me…so just enjoy those sexy insights for free. 😎</p>	
+
+		</div>
+
+	</div>
+
+</div>
+
+			
+
+		</div>
+
+	</div>
+
+
+	<!-- Bootstrap core JavaScript (with jQuery and Popper.js)
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- Main site Javascript. -->
+    <script type="text/javascript" src="./dependencies/main.js"></script>
+
+  </body>
+</html>

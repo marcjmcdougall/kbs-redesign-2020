@@ -1,4 +1,8 @@
 @charset "UTF-8";
+html {
+  min-height: 100%;
+  position: relative; }
+
 html, body {
   font-family: "Karla", sans-serif;
   font-size: 12px;
@@ -11,9 +15,6 @@ body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   box-sizing: border-box;
-  position: relative;
-  top: 0px;
-  left: 0px;
   background-color: #FFFFFF; }
   body p, body a, body .p, body quote, body cite, body ul, body ol {
     font-family: "Karla", sans-serif;
@@ -182,6 +183,14 @@ body {
       color: #313135; }
       body .btn.btn-gray:hover {
         color: #313135 !important; }
+    body .btn.btn-light {
+      background-color: transparent;
+      border: 1px solid #0396FF;
+      color: #0396FF; }
+      body .btn.btn-light:hover {
+        color: #FFFFFF;
+        background-color: #0396FF;
+        opacity: 1.0; }
     body .btn.btn-hover {
       -webkit-transition: 0.5s;
       transition: 0.5s;
@@ -299,6 +308,17 @@ body {
   .scroll-content.scroll {
     position: fixed;
     top: 100px; }
+
+.not-found #main {
+  margin-bottom: 200px; }
+  .not-found #main a.btn {
+    margin-top: 30px; }
+
+.not-found #copyright {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%; }
 
 nav.bg-light {
   background-color: #FFFFFF !important; }
@@ -1000,11 +1020,12 @@ footer {
       margin-bottom: 10px; }
       footer .footer-nav .footer-nav-item ul li a {
         line-height: 1.2; }
-  footer #copyright {
-    background-color: #EAEAEA;
-    padding: 15px 0px;
-    margin-top: 40px; }
-    footer #copyright p {
-      margin: 0px; }
-    footer #copyright a:first-child {
-      margin-right: 20px; }
+
+#copyright {
+  background-color: #EAEAEA;
+  padding: 15px 0px;
+  margin-top: 40px; }
+  #copyright p {
+    margin: 0px; }
+  #copyright a:first-child {
+    margin-right: 20px; }
