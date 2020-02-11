@@ -1023,6 +1023,8 @@ nav{
 
 					padding: 15px 10px;
 
+					width: 275px;
+
 					// Headers for groups.
 					.dropdown-header{
 
@@ -1050,6 +1052,7 @@ nav{
 					a.dropdown-item{
 
 						margin-bottom: 5px;
+						white-space: normal;
 
 						&:hover{
 
@@ -1172,7 +1175,7 @@ nav{
 
 						a.dropdown-item{
 
-							margin-bottom: 10px !important;
+							margin-bottom: 15px !important;
 							white-space: normal;
 							line-height: 1.5;
 							// max-width: 185px;
