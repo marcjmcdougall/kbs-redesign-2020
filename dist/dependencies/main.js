@@ -82,6 +82,13 @@ $('.scroll-content').click(function(event){
 	$('.scroll-content img').toggleClass('active');
 });
 
+$('.navbar-toggler').click(function(event){
+
+	event.preventDefault();
+
+	$('body').toggleClass('navbar-show');
+});
+
 
 // Other Events
 // ===

@@ -107,7 +107,7 @@ html, body{
 
 body{	
 
-	// Optimize legibility for retina devices.
+	// Optimize legibility for retina devic	es.
 	-webkit-font-smoothing: antialiased !important;
    	text-rendering: optimizelegibility !important;
 
@@ -117,6 +117,11 @@ body{
 
 	// Background color for the site.
 	background-color: $white;
+
+	position: relative;
+	transition: $standard-transition-duration right;
+	right: 0px;
+	// overflow: hidden;
 
 	p, a, .p, quote, cite, ul, ol{
 
@@ -232,6 +237,11 @@ body{
 	footer{
 
 		margin-top: 100px;
+	}
+
+	&.navbar-show{
+
+		right: 250px;
 	}
 
 	
@@ -619,7 +629,9 @@ body{
 // Controls the Bootstrap 4 container width.
 .container{
 
-	max-width: $container-width;
+	max-width: $container-width; 
+
+	padding: 0px 40px;
 }
 
 // Page titles.
@@ -795,6 +807,12 @@ nav{
 	&.navbar{
 
 		margin-top: 20px;
+		padding: 0px;
+
+		.container{
+
+			padding: 0px 40px;
+		}
 
 		// The site logo.
 		.navbar-brand{
@@ -909,6 +927,115 @@ nav{
 				}
 			}
 		}
+
+		.navbar-toggler{
+
+			border: 0px;
+			padding: 0px;
+
+			.navbar-toggler-icon{
+
+				width: 40px;
+				height: 40px;
+
+				// Change the toggler color to $black.
+				background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(49,49,53, 1.0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+			}
+		}
+
+		@media screen and (max-width: 992px){
+
+			.navbar-collapse{
+
+				position: absolute;
+				left: 100%;
+				top: -20px;
+
+				display: block;
+				height: 100vh;
+
+				&.show{
+
+					// left: 50%;
+				}
+
+				&.collapsing{
+
+					// height: 100%;
+					transition: none;
+					overflow: show;
+				}
+
+				ul.navbar-nav{
+
+					background-color: $light-gray;
+					height: 100vh;
+
+					padding: 15px 30px;
+					padding-top: 30px;
+
+					width: 250px;
+
+					li.nav-item{
+
+						margin-bottom: 20px;
+						margin-right: 0px;
+
+						&.dropdown.show{
+
+							margin-bottom: 0px;
+						}
+
+						a{
+
+							padding: 0px;
+
+							&.btn{
+
+								width: 100%;
+							}
+						}
+					}
+
+					.dropdown-menu{
+
+						background-color: transparent !important;
+						box-shadow: none !important;
+
+						min-width: auto !important;
+
+						padding-left: 25px !important;
+						padding-top: 5px !important;
+
+						.dropdown-header{
+
+							padding-left: 0px;
+							margin-bottom: 10px;
+						}
+
+						.dropdown-divider{
+
+							margin-left: 0px !important;
+							margin-right: 0px !important;
+						}
+
+						a.dropdown-item{
+
+							margin-bottom: 10px !important;
+							white-space: normal;
+							line-height: 1.5;
+							// max-width: 185px;
+							margin-right: 0px;
+
+							&:hover{
+
+								background-color: transparent !important;
+							}
+						}
+					}
+				}
+			}
+		}	
 	}
 }
 
@@ -1954,6 +2081,45 @@ body.home{
 			z-index: 2;
 		}
 	}
+
+	#hero-image-alt{
+
+		position: absolute;
+		top: -50px;
+		left: 0px;
+
+		z-index: -1;
+		opacity: 0.2;
+
+		width: 484px;
+		height: 385px;
+
+		background-image: url('../img/me-bg-mobile-2.jpg');
+		background-size: cover;
+	}
+
+	@media screen and (max-width: 950px){
+
+		#hero-flair-container{
+
+			z-index: -1;
+
+			width: 400px;
+			height: 320px;
+
+			margin: 0 auto;
+			float: none;
+		}
+	}
+
+	@media screen and (max-width: 850px){
+
+		#hero-flair-container{
+
+			width: 350px;
+			height: 275px;
+		}
+	}
 }
 
 // Brands section on the homepage.
@@ -1969,7 +2135,6 @@ body.home{
 			vertical-align: middle;
 			max-width: calc((100% - (60px * 4)) / 5);
 
-
 			filter: grayscale(100%);
 
 			opacity: 0.4;
@@ -1980,6 +2145,26 @@ body.home{
 
 				margin-right: 0px;
 			}
+		}
+	}
+
+	// TODO: Next
+	@media screen and (max-width: 768px){
+
+		#brands-container{
+
+			text-align: center;
+
+			img.brand-image{
+
+				max-width: 150px;
+
+				&:nth-of-type(4),
+				&:nth-of-type(5){
+
+					// display: none;
+				}
+			}	
 		}
 	}
 }
