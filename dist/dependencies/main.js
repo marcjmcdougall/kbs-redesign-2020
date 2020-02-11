@@ -89,6 +89,11 @@ $('.navbar-toggler').click(function(event){
 	$('body').toggleClass('navbar-show');
 });
 
+$('#article-navigation').click(function(){
+
+	$(this).toggleClass('active');
+});
+
 
 // Other Events
 // ===
