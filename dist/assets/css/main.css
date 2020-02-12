@@ -697,7 +697,7 @@ nav.navbar {
   margin-bottom: 0px; }
 
 .contact-options .contact-option:not(:last-child) {
-  margin-bottom: 10px; }
+  margin-bottom: 15px; }
 
 .availability-widget.available .capacity-indicator {
   background-color: #81E65C;
@@ -1172,7 +1172,7 @@ ul.breadcrumbs {
         text-align: center; } }
 
 #brands {
-  margin-top: 30px; }
+  margin-top: 40px; }
   #brands #brands-container {
     text-align: center;
     margin-left: -25px;
